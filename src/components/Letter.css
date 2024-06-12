@@ -1,0 +1,46 @@
+.letter {
+    color: gray;
+}
+
+.correct {
+    color: var(--color-correct);
+}
+
+.incorrect {
+    color: red;
+}
+
+.active {
+    animation: cursorAnimation 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes cursorAnimation {
+    0% {
+        transform: translateY(-1px);
+    }
+
+    100% {
+        transform: translateY(1px);
+    }
+}
+
+.active::before {
+    content: "_";
+    color: var(--cursor);
+    position: absolute;
+    width: 100%;
+    bottom: -2px;
+    animation: 1s blink infinite ease-in-out
+}
+
+@keyframes blink {
+
+    0%,
+    25% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+    }
+}
